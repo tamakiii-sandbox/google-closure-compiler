@@ -3,7 +3,7 @@ build:
 	docker build -t google-closure-compiler .
 
 run:
-	docker run --rm -it google-closure-compiler --version
+	docker run --rm -it -v $(PWD):/app google-closure-compiler --version
 
 login:
-	docker run --rm -it --entrypoint ash google-closure-compiler
+	docker run --rm -it -v $(PWD):/app --entrypoint ash google-closure-compiler
